@@ -1,0 +1,242 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+html, body{
+    height:100%;
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: RobotoThin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: 'Roboto', sans-serif;
+    font-size:12px;
+    margin:0;
+    padding:0;
+    /* On modern browsers, prevent the whole page to bounce */
+    overflow: hidden;
+}
+
+.encabezado, .menu, .cuerpo, .pie, .menuA, .menuB{
+    width: 100%;
+}
+
+.contenedor1{
+    left: 0%;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+.bloqueoSubida
+{
+    display: block;
+    width: auto;
+    height: 18%; 
+}
+
+#wrapper{
+    left: 0%;    
+}
+
+#wrapperB{
+    left: 100%;
+}
+
+#wrapper, #wrapperB{
+    /*display: inline-flex;*/
+    position: absolute;
+    z-index: 1;       
+    overflow: hidden;
+    width: 100%;    
+    min-height: 82.20%;
+    /*background: #66ff99;*/
+    /*transition: left 0.5s ease;  */
+    /* Prevent native touch events on Windows */
+    -ms-touch-action: none;
+
+    /* Prevent the callout on tap-hold and text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Prevent text resize on orientation change, useful for web-apps */
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;    
+}
+
+
+#scroller ,#scrollerB { 
+	position: absolute;
+	z-index: 1;
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 300%;
+	height: 100%;
+	/*background-color: #a00;*/
+        /* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller ul ,#scrollerB ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;	
+	height: 100%;
+	text-align: center;
+}
+
+/*#scroller li{*/
+#scroller li , #scrollerB li{
+	display: block;
+	float: left;
+	width: 33.333333%;
+	height: 100%;
+        font-family: 'RobotoThin', sans-serif;
+        color: #434343;
+        font-size: 14px;
+	background-color: #FBFBFB;        
+        text-align: center;	
+}
+
+
+/*medidas en landscape*/
+@media (min-width: 600px) {
+  .bloqueoSubida {
+    height: 24%; 
+  }
+  #wrapper, #wrapperB{
+      min-height: 75.20%;
+  }
+}
+/*  
+#cuerpoA1{
+    background: #ffff33;
+}
+#cuerpoA2{
+     background: blue;
+}
+#cuerpoA3{
+    background: red;
+}*/
+
+#cuerpoB4{
+    background: #08AE9E;
+}
+
+#cuerpoB5{
+    background: #BCBCBC;
+}
+
+#cuerpoB6{
+    background: sandybrown;
+}
+.encabezado{
+    position: fixed;
+    top: 0;
+    height: 9%;
+    background: #08AE9E;
+}
+
+.menu{
+    position: fixed;
+    z-index: 1000000;
+    top: 9%;
+    background: #FAFAFA;
+    -webkit-box-shadow: 3px 0px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    3px 0px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         3px 0px 4px 0px rgba(50, 50, 50, 0.5);  
+}
+
+.menu ul{
+    display: table;
+    height: 59px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu ul li{
+    display: table-cell;
+    width: 33%;
+    color: #BCBCBC;
+    font-size: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pantallaDerecha{
+    left: 100% !important;
+    position: absolute;
+    z-index: 10000;
+}
+.pantallaCentrada{
+    left: 0% !important;
+    /*position: absolute;
+    z-index: 10000;*/
+}
+
+/*iconos*/
+.claro{
+    color: #FAFAFA;
+}
+
+.oscuro{
+    color: #434343;
+}
+
+.icono-normal{
+    font-size: x-large;
+}
+
+.icono-grande{
+    font-size: xxx-large;
+}
+
+.encabezado .icono-normal{
+    margin: 3%;
+}
